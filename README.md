@@ -1,2 +1,2 @@
 # TomcatRedisSample
-Two Tomcat server using Redis for session sharing
+Two Tomcat server using Redis for sharing session data.
