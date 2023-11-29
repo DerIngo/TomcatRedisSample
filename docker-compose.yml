@@ -7,11 +7,20 @@ services:
     volumes:
       - ./reverseproxy/httpd.conf:/usr/local/apache2/conf/httpd.conf
 
-  tomcat:
+  tomcat-1:
     build: ./tomcat
-    hostname: tomcat
+    hostname: tomcat-1
     volumes:
       - ./tomcat/ROOT.war:/usr/local/tomcat/webapps/ROOT.war
+      - ./tomcat/server-1.xml:/usr/local/tomcat/conf/server.xml
+
+  tomcat-2:
+    build: ./tomcat
+    hostname: tomcat-2
+    volumes:
+      - ./tomcat/ROOT.war:/usr/local/tomcat/webapps/ROOT.war
+      - ./tomcat/server-2.xml:/usr/local/tomcat/conf/server.xml
+
 
   redis:
     image: redis
